@@ -1,0 +1,56 @@
+<section class="navigation">
+  <div class="nav-container">
+    <div class="brand mt-3 mb-4">
+      <a href="#!">Blogify</a>
+    </div>
+    <div class="user-box">
+      <div class="stories__item stories__item--active user-avtarmain">
+        <button>
+          <div class="stories__item-picture user-avtar">
+            <img src="{{#if userName.avtar}}../uploads/{{userName.avtar}}{{else}}https://avatarfiles.alphacoders.com/103/103875.png{{/if}}" alt="{{userName.username}}'s profile picture" />
+          </div>
+
+          <span class="stories__item-username">{{ userName.username }}</span>
+
+        </button>
+      </div>
+      <div class="followers-box">
+        <div class="followers">
+          <p class="cont">{{posts.length}}</p>
+          <p class="flo">Posts</p>
+        </div>
+        <div class="followers">
+          <p class="cont">100</p>
+          <p class="flo">followers</p>
+        </div>
+        <div class="followers">
+          <p class="cont">100</p>
+          <p class="flo">following</p>
+        </div>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-mobile">
+        <a id="nav-toggle" href="#!"><span></span></a>
+      </div>
+      <ul class="nav-list">
+        <!-- Setting the links to #! will ensure that no action takes place on click. -->
+        <li><a href="/"><i class="fa-sharp fa-solid fa-house"></i>
+            <span>Feeds</span></a></li>
+        <li><a href="post"><i class="fa-solid fa-square-plus"></i>
+            <span>Create</span></a></li>
+        <li><a href="#!"><i class="fa-sharp fa-solid fa-message"></i>
+            <span>Message</span></a></li>
+        <li><a href="#!"><i class="fa-solid fa-bell"></i>
+            <span>Notifications</span></a></li>
+        <li><a href="#!"><i class="fa-solid fa-magnifying-glass"></i>
+            <span>Explore</span></a></li>
+        <li><a href="/profile"><i class="fa-solid fa-user"></i>
+            <span>Profile</span></a></li>
+        <li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+      </ul>
+    </nav>
+
+  </div>
+
+</section>

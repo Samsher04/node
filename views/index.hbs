@@ -1,0 +1,170 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  {{>head}}
+  <body>
+        {{> nav }}
+
+      <main class="main">
+    <section class="stories">
+      <div class="stories__item stories__item--active">
+        <button>
+          <div class="stories__item-picture">
+            <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="gail_pena's profile picture">
+          </div>
+          <span class="stories__item-username">gail_pena</span>
+        </button>
+      </div>
+
+      <div class="stories__item">
+        <button>
+          <div class="stories__item-picture">
+            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="louis_larson's profile picture">
+          </div>
+          <span class="stories__item-username">louis_larson</span>
+        </button>
+      </div>
+
+      <div class="stories__item stories__item--active">
+        <button>
+          <div class="stories__item-picture">
+            <img src="https://randomuser.me/api/portraits/women/20.jpg" alt="tonya_rodriquez's profile picture">
+          </div>
+          <span class="stories__item-username">tonya_rodriquez</span>
+        </button>
+      </div>
+
+      <div class="stories__item">
+        <button>
+          <div class="stories__item-picture">
+            <img src="https://randomuser.me/api/portraits/men/81.jpg" alt="earl_martinez's profile picture">
+          </div>
+          <span class="stories__item-username">earl_martinez</span>
+        </button>
+      </div>
+
+      <div class="stories__item stories__item--active">
+        <button>
+          <div class="stories__item-picture">
+            <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="gail_pena's profile picture">
+          </div>
+          <span class="stories__item-username">gail_pena</span>
+        </button>
+      </div>
+
+      <div class="stories__item">
+        <button>
+          <div class="stories__item-picture">
+            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="louis_larson's profile picture">
+          </div>
+          <span class="stories__item-username">louis_larson</span>
+        </button>
+      </div>
+
+      <div class="stories__item stories__item--active">
+        <button>
+          <div class="stories__item-picture">
+            <img src="https://randomuser.me/api/portraits/women/20.jpg" alt="tonya_rodriquez's profile picture">
+          </div>
+          <span class="stories__item-username">tonya_rodriquez</span>
+        </button>
+      </div>
+
+      <div class="stories__item">
+        <button>
+          <div class="stories__item-picture">
+            <img src="https://randomuser.me/api/portraits/men/81.jpg" alt="earl_martinez's profile picture">
+          </div>
+          <span class="stories__item-username">earl_martinez</span>
+        </button>
+      </div>
+      
+      <div class="stories__item stories__item--active">
+        <button>
+          <div class="stories__item-picture">
+            <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="gail_pena's profile picture">
+          </div>
+          <span class="stories__item-username">gail_pena</span>
+        </button>
+      </div>
+      
+      <div class="stories__item">
+        <button>
+          <div class="stories__item-picture">
+            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="louis_larson's profile picture">
+          </div>
+          <span class="stories__item-username">louis_larson</span>
+        </button>
+      </div>
+
+      <div class="stories__item stories__item--active">
+        <button>
+          <div class="stories__item-picture">
+            <img src="https://randomuser.me/api/portraits/women/20.jpg" alt="tonya_rodriquez's profile picture">
+          </div>
+          <span class="stories__item-username">tonya_rodriquez</span>
+        </button>
+      </div>
+
+      <div class="stories__item">
+        <button>
+          <div class="stories__item-picture">
+            <img src="https://randomuser.me/api/portraits/men/81.jpg" alt="earl_martinez's profile picture">
+          </div>
+          <span class="stories__item-username">earl_martinez</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+      <div class="container2 mt-3">
+
+      {{#each posts}}
+        <div class="col-md-6 mb-3">
+          <div class="card" >
+            <p class="card-text">
+              <span class="avtar">
+    <img src="{{#if this.userId.avtar}}../uploads/{{this.userId.avtar}}{{else}}https://avatarfiles.alphacoders.com/103/103875.png{{/if}}" alt="{{userName.username}}'s profile picture" />
+            </span> {{this.userId.name}}
+            </p>
+            <img src="../uploads/{{this.image}}" class="card-img-top" alt="..." 
+              style="object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title">{{this.title}}</h5>            
+                <div class="comment-box">
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <div class="post-icon">
+                    <i class="fa-regular fa-heart like-btn" data-post-id="{{this._id}}"></i>
+                    <label for="com{{@index}}">
+                      <i class="fa-regular fa-comment"></i>
+                    </label>
+                    <p class="like">{{this.likes}} likes</p>
+                  </div>    
+                </div>
+              
+                <form method="POST" action="/post/{{this._id}}/comment" class="comment">
+                <a href="/allpost/{{this._id}}">
+                  <p class="View-all">View all <span>{{comments.length}}</span> comments</p>
+                </a>
+                  <div class="text-area">
+                    <textarea id="com{{@index}}" class="commentContent" name="content" placeholder="Add a comment"></textarea>
+                    <button class="postBtn" type="submit" style="display: none;">
+                      Post
+                    </button>
+                  </div>
+                </form>
+
+          </div>
+        </div>
+        </div>
+        {{/each}}
+        </div>
+      </div>
+          
+      {{>footer}}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script src="../js/script.js"></script>
+ 
+  </body>
+  </html>
