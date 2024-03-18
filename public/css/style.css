@@ -512,4 +512,10 @@ body {
     .loginf{
       padding-top: 0px;
     }
+    .col-md-6{
+      width: 100%;
+    }
+    .col-8{
+      width: 100% !important;
+    }
     }

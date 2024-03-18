@@ -30,10 +30,8 @@ router.get("/", async (req, res) => {
 router.get("/allpost/:postId", async (req, res) => {
   try {
     const postId = req.params.postId;
-    // Fetch the post and its associated comments
     const post = await newpost.findById(postId).populate("userId").exec();
     const comments = await Comment.find({ postId }).populate("userId").exec();
-    // Render a separate page to display the post and its comments
     res.render("allpost", { post, comments });
   } catch (error) {
     console.error("Error fetching data:", error);
